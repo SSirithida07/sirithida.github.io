@@ -1,20 +1,231 @@
 <!DOCTYPE html>
-<html>
+<html lang="th">
 <head>
-    <title>Sirithida Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kumoriiz Profile Links</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 80px;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        /* ฝั่งซ้าย: โปรไฟล์และลิงก์ */
+        .left-profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 320px;
+        }
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .username {
+            font-size: 32px;
+            font-weight: 600;
+            color: #2c5270;
+            margin-bottom: 25px;
+            letter-spacing: 0.5px;
+        }
+
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .btn-link {
+            display: flex;
+            align-items: center;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 400;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .btn-link i {
+            font-size: 22px;
+            width: 35px;
+        }
+
+        .btn-link span {
+            flex-grow: 1;
+            text-align: center;
+            margin-right: 35px; /* เพื่อให้ข้อความอยู่ตรงกลางพอดี */
+        }
+
+        /* สีปุ่มตามแบรนด์ */
+        .youtube { background-color: #ff3333; }
+        .tiktok { background-color: #000000; }
+        .facebook { background-color: #1877f2; }
+        .miga { background-color: #111111; } /* ปรับลิงก์สีดำตามภาพสัญลักษณ์ M */
+
+        /* ฝั่งขวา: การ์ด Discord */
+        .right-discord {
+            position: relative;
+            background-color: #5865F2;
+            width: 320px;
+            border-radius: 25px;
+            padding: 30px 20px;
+            color: white;
+            text-align: center;
+            box-shadow: -15px 15px 0px #e0e0e0; /* เงาซ้อนหนาๆ สไตล์มินิมอลตามแบบ */
+        }
+
+        /* รูตกแต่งมุมซ้ายบนและขวาล่าง */
+        .right-discord::before, .right-discord::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background-color: #ffffff;
+            border-radius: 50%;
+        }
+        .right-discord::before { top: 15px; left: 15px; }
+        .right-discord::after { bottom: 15px; right: 15px; }
+
+        .discord-logo {
+            font-size: 32px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .qr-container {
+            background-color: #ffffff;
+            border-radius: 20px;
+            padding: 20px;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .qr-title {
+            color: #000000;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .qr-image {
+            width: 100%;
+            max-width: 180px;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px auto;
+        }
+
+        .qr-footer {
+            color: #666666;
+            font-size: 11px;
+        }
+
+        /* รองรับการแสดงผลบนมือถือ */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                gap: 50px;
+                padding-bottom: 50px;
+            }
+            .right-discord {
+                box-shadow: 0px 15px 0px #e0e0e0; /* ปรับทิศทางเงาเมื่ออยู่แนวตั้ง */
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>สวัสดีค่ะ ฉันสิริธิดา</h1>
-    <p>3D Artist | Digital Creator</p>
 
-    <h2>ผลงาน</h2>
-    <ul>
-        <li>งานปั้น 3D Nomad Sculpt</li>
-        <li>สติ๊กเกอร์ LINE</li>
-        <li>Digital Products</li>
-    </ul>
+    <div class="container">
+        
+        <div class="left-profile">
+            <img src="https://yt3.ggpht.com/xiWHiTCqPZ2YtG87kmrs-JKbmcJ7dAsE94rlA6dAKBVfXVHoCKK4oCPqae00pG0GXRbeNs5BXz0=s150-c-k-c0x00ffffff-no-rj" alt="kumoriiz avatar" class="avatar">
+            
+            <h1 class="username">kumoriiz</h1>
+            
+            <div class="links-container">
+                <a href="https://www.youtube.com/@kumoriiz" target="_blank" class="btn-link youtube">
+                    <i class="fab fa-youtube"></i>
+                    <span>@kumoriiz</span>
+                </a>
+                
+                <a href="https://www.tiktok.com/@kumoriiz.tech" target="_blank" class="btn-link tiktok">
+                    <i class="fab fa-tiktok"></i>
+                    <span>@kumoriiz.tech</span>
+                </a>
+                
+                <a href="https://www.facebook.com/Kumoriiz" target="_blank" class="btn-link facebook">
+                    <i class="fab fa-facebook-f"></i>
+                    <span>Kumoriiz</span>
+                </a>
+                
+                <a href="https://medium.com/@kumoriiz" target="_blank" class="btn-link miga">
+                    <i class="fas fa-m"></i>
+                    <span>@kumoriiz</span>
+                </a>
+            </div>
+        </div>
 
-    <h2>ติดต่อ</h2>
-    <p>Email: your@email.com</p>
+        <div class="right-discord">
+            <div class="discord-logo">
+                <i class="fab fa-discord"></i> DISCORD
+            </div>
+            
+            <div class="qr-container">
+                <div class="qr-title">คำเชิญโดยคิวอาร์โค้ด</div>
+                
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://discord.gg/kumoriiz" alt="Discord QR Code" class="qr-image">
+                
+                <div class="qr-footer">สแกนคิวอาร์โค้ดเพื่อเข้าร่วม ชาวkumoriiz</div>
+            </div>
+        </div>
+
+    </div>
+
 </body>
 </html>
